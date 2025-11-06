@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebGIS 2025</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- shp.js untuk upload shapefile -->
+  <script src="https://unpkg.com/shpjs@latest/dist/shp.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🌍 WebGIS Dashboard</h1>
+    <span class="version">Versi 2.1.4</span>
+  </header>
+
+  <div id="container">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <!-- Analisis Luasan -->
+      <section class="panel">
+        <h2>Analisis Luasan</h2>
+        <div class="chart-wrapper">
+          <canvas id="chartLuasan" width="220" height="220"></canvas>
+        </div>
+        <div class="chart-labels">
+          <div><span class="color-box red"></span> Overlap Kawasan Hutan</div>
+          <div><span class="color-box gray"></span> Area Lain</div>
+        </div>
+      </section>
+
+      <!-- Layer Data -->
+      <section class="panel">
+        <h2>Layer Data</h2>
+        <p>Aktifkan layer di pojok kanan atas atau unggah shapefile overlay (.zip)</p>
+
+        <div class="upload-section">
+          <label for="shapefile">Upload Shapefile (.zip):</label>
+          <input type="file" id="shapefile" accept=".zip" />
+        </div>
+      </section>
+
+      <!-- Status koneksi -->
+      <section class="panel status">
+        <h2>Status Koneksi</h2>
+        <div id="statusKoneksi" class="connected">
+          ✅ Terhubung ke GeoServer<br />
+          <small>Menampilkan data spasial SIGAP...</small>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Peta -->
+    <main id="map"></main>
+
+    <!-- Legenda -->
+    <div id="legend" class="legend"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="main.js"></script>
+</body>
+</html>

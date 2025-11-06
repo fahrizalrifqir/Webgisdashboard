@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f6fa;
+}
+
+header {
+  background: #2e5939;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+header .version {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+#container {
+  display: flex;
+  flex: 1;
+}
+
+/* Sidebar kiri */
+#sidebar {
+  width: 310px;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.panel h2 {
+  font-size: 16px;
+  border-bottom: 2px solid #eaeaea;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+}
+
+.layer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layer-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  background: #ddd;
+}
+
+.layer-btn.active {
+  background: #2e5939;
+  color: #fff;
+}
+
+.upload-section {
+  margin-top: 15px;
+}
+
+.upload-section input {
+  width: 100%;
+  padding: 6px;
+  margin-top: 5px;
+}
+
+.status {
+  background: #f0fdf4;
+  border: 1px solid #d4edd9;
+}
+
+#statusKoneksi {
+  background: #e8fbe8;
+  padding: 10px;
+  border-radius: 6px;
+  color: #1e4620;
+}
+
+/* Peta utama */
+#map {
+  flex: 1;
+  position: relative;
+}
+
+/* Legenda */
+.legend {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: white;
+  padding: 12px 14px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+/* Sembunyikan tombol Layer Data */
+.layer-controls {
+  display: none;
+}
+/* Kontrol layer pojok kanan atas */
+.leaflet-control-layers {
+  background: white;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+  font-size: 13px;
+}
+
+/* Warna legend */
+.legend-color {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border: 1px solid #999;
+  border-radius: 3px;
+}
+/* ----- Diagram Donat di Panel Analisis ----- */
+.chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.chart-labels {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.color-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.red { background: #e74c3c; }
+.gray { background: #bdc3c7; }
+
+/* ----- Legend otomatis ----- */
+.legend h4 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.legend i {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-right: 6px;
+  opacity: 0.8;
+}
